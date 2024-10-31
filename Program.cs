@@ -11,7 +11,7 @@ namespace Store
     {
         public static void Main()
         {
-            var productPresenter = new ProductPresenter();
+            var productPresenter = new ProductService();
             var customer = new CustomerPresenter(100);
             var vendor = new VendorPresenter(productPresenter, 5, 15);
 

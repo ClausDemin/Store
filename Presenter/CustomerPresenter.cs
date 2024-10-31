@@ -13,7 +13,7 @@ namespace Store.Presenter
         public ICustomer Customer { get; private set; }
         public float Balance => Customer.Balance;
 
-        public IEnumerable<KeyValuePair<Product, int>> Inventory => Customer.InventoryInfo;
+        public IReadOnlyDictionary<Product, int> Inventory => Customer.InventoryInfo;
 
         public void DoPayment(List<Product> productCart, float paymentAmount)
         {

@@ -22,9 +22,9 @@ namespace Store.Model
               
         public float Balance => _wallet.Balance;
 
-        public IEnumerable<KeyValuePair<Product, int>> InventoryInfo => _storage.Products;
+        public IReadOnlyDictionary<Product, int> InventoryInfo => _storage.Products;
         
-        public IEnumerable<KeyValuePair<Product, int>> ProductsCart => _productsCart.Products;
+        public IReadOnlyDictionary<Product, int> ProductsCart => _productsCart.Products;
 
         public bool TryAddProductInCart(Product product) 
         {

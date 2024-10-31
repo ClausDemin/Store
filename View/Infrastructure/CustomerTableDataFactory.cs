@@ -17,7 +17,7 @@ namespace Store.View.Infrastructure
             return customerInventoryData;
         }
 
-        private string[,] ExtractInventoryData(IEnumerable<KeyValuePair<Product, int>> inventory)
+        private string[,] ExtractInventoryData(IReadOnlyDictionary<Product, int> inventory)
         {
             var extractedData = new List<List<string>>();
 

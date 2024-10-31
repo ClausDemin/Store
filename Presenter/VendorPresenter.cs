@@ -8,16 +8,16 @@ namespace Store.Presenter
     public class VendorPresenter
     {
         private IVendor _vendor;
-        private ProductPresenter _presenter;
+        private ProductService _presenter;
 
-        public VendorPresenter(ProductPresenter presenter, uint minProductCount, uint maxProductCount)
+        public VendorPresenter(ProductService presenter, uint minProductCount, uint maxProductCount)
         {
             _presenter = presenter;
             _vendor = new Vendor(_presenter.CreateProductList(minProductCount, maxProductCount));
         }
 
-        public IEnumerable<KeyValuePair<Product, int>> Storage => _vendor.InventoryInfo;
-        public IEnumerable<KeyValuePair<Product, int>> ProductsCart => _vendor.ProductsCart;
+        public IReadOnlyDictionary<Product, int> Storage => _vendor.InventoryInfo;
+        public IReadOnlyDictionary<Product, int> ProductsCart => _vendor.ProductsCart;
 
         public float Balance => _vendor.Balance;
 

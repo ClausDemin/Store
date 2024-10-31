@@ -3,11 +3,11 @@ using Store.Model.Infrastructure;
 
 namespace Store.Presenter
 {
-    public class ProductPresenter
+    public class ProductService
     {
         private ProductsFactory _productFactory;
 
-        public ProductPresenter() 
+        public ProductService() 
         {
             _productFactory = new ProductsFactory();
         }

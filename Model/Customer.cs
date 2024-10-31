@@ -1,5 +1,6 @@
 ﻿using Store.Model.Infrastructure;
 using Store.Model.RoleInterfaces;
+using System.Collections.ObjectModel;
 
 namespace Store.Model
 {
@@ -16,7 +17,7 @@ namespace Store.Model
 
         public float Balance => _wallet.Balance;
 
-        public IEnumerable<KeyValuePair<Product, int>> InventoryInfo => _inventory.Products;
+        public IReadOnlyDictionary<Product, int> InventoryInfo => _inventory.Products;
 
         public bool DoPayment(List<Product> productCart, float paymentAmount)
         {

@@ -1,7 +1,9 @@
-﻿namespace Store.Model.RoleInterfaces
+﻿using System.Collections.ObjectModel;
+
+namespace Store.Model.RoleInterfaces
 {
     public interface IHaveInventory
     {
-        public IEnumerable<KeyValuePair<Product, int>> InventoryInfo { get; }
+        public IReadOnlyDictionary<Product, int> InventoryInfo { get; }
     }
 }
